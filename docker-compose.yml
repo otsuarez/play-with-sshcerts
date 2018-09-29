@@ -1,0 +1,25 @@
+version: '3'
+services:
+  server1:
+    image: centos:7
+    hostname: server1
+    command: /sbin/init
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+      - ./:/root/shared
+    cap_add:
+      - SYS_ADMIN
+    security_opt:
+      - seccomp:unconfined
+
+  server2:
+    image: centos:7
+    hostname: server2
+    command: /sbin/init
+    cap_add:
+      - SYS_ADMIN
+    security_opt:
+      - seccomp:unconfined
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+      - ./:/root/shared
