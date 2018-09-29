@@ -1,6 +1,6 @@
 # Introduction
 
-Playground for testing ssh certificated.
+Playground for testing ssh certificates.
 
 Using `docker-compose` two "servers" will be created to test ssh connectivity.
 
